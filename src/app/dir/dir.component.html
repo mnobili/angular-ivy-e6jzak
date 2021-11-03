@@ -1,0 +1,19 @@
+<button (click)="showEverything()">Show/hide</button>
+
+<div *ngIf="showAll">
+  <section>Languages</section>
+  <ul *ngFor="let el of langs">
+    <li>
+      <button (click)="setDefaultLang(el)">
+        {{el}}
+      </button>
+    </li>
+  </ul>
+
+  <div [ngSwitch]="setLang">
+    <p *ngSwitchCase="'en'">Hi</p>
+    <p *ngSwitchCase="'it'">Ciao</p>
+    <p *ngSwitchCase="'es'">Hola</p> 
+    <p *ngSwitchDefault>Saluto</p>
+  </div>
+</div>

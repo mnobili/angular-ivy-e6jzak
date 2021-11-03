@@ -8,5 +8,6 @@ import { Component, VERSION } from '@angular/core';
 export class AppComponent  {
   name = 'Angular ' + VERSION.major;
   companyName = 'Agos';
-  ceoName = 'Steve'
+  ceoName = 'Steve';
+  langs = [];
 }
