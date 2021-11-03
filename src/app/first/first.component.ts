@@ -7,9 +7,13 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class FirstComponent implements OnInit {
   @Input() companyName = "Agos"
+  ceoName = "Steve"
   changeCompanyName() {
     this.companyName = "This Binding works!"
   }
+  onKeyUp(event: any) {
+    this.ceoName = event.target.value
+    }
   constructor() { }
 
   ngOnInit() {

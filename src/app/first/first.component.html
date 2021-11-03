@@ -3,3 +3,9 @@
 </p>
 
 <button (click)="changeCompanyName()"> Cambia Nome</button>
+
+<p>
+<app-ceo [ceoName]="ceoName">
+</app-ceo>
+<input (keyup)="onKeyUp($event)"/>
+</p>
