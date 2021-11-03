@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-register',
@@ -14,6 +14,7 @@ export class ReactiveRegisterComponent implements OnInit {
       name: new FormControl(''),
       email: new FormControl(''),
       password: new FormControl(''),
+      privacyTerms: new FormControl('', [ Validators.requiredTrue ]),
     });
     
   }
@@ -21,6 +22,7 @@ export class ReactiveRegisterComponent implements OnInit {
   login() {
     const email = this.loginForm.value.email
     const password = this.loginForm.value.password
+    const privacyTerms = this.loginForm.value.privacyTerms
     alert("User Info: " + `${this.loginForm.value.name} -- ${this.loginForm.value.email} -- ${this.loginForm.value.password}`)
     }
   ngOnInit() {
