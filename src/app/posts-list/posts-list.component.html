@@ -1,0 +1,17 @@
+<h1>Posts</h1>
+<p></p>
+<div>
+  <div *ngFor="let item of allPosts">
+    <ul>
+      <li>
+      <strong>userId: </strong> {{ item.userId }}
+      <br>
+      <strong>id: </strong> {{ item.id }}
+      <br>
+      <strong>title: </strong> {{ item.title }}
+      <br>
+      <strong>body: </strong> {{ item.body }}
+      </li>
+    </ul>
+  </div>
+</div>
