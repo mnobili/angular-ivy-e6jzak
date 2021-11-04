@@ -9,9 +9,11 @@ export class AuthService {
   constructor() { }
 
   login() {
+    this.isLoggedIn$.next(true)
+    console.log(this.isLoggedIn$)
   }
   logout() {
-
+    this.isLoggedIn$.next(false)
   }
 
   isLoggedIn() {

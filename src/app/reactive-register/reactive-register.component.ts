@@ -9,7 +9,7 @@ import { AuthService } from '../../auth.service';
 })
 export class ReactiveRegisterComponent implements OnInit {
   loginForm: FormGroup;
-
+  isLoggedIn: boolean;
   constructor(private _auth: AuthService) {
     this.loginForm = new FormGroup({
       email: new FormControl(),
@@ -23,6 +23,11 @@ export class ReactiveRegisterComponent implements OnInit {
   }
 
   login() {
+    this._auth.login()
+  }
+
+  logout() {
+    this._auth.logout()
   }
   
   get email(): string {

@@ -1,8 +1,5 @@
 <br>
-<form [formGroup]="loginForm" (submit)="login()">
-  <br>
-  <p></p>
-  <input type="text" formControlName="name"/>
+<form [formGroup]="loginForm" *ngIf="!isLoggedIn" (submit)="login()">
   <br>
   <p></p>
   <input type="text" formControlName="email"/>
@@ -13,3 +10,7 @@
   <p></p>
   <button type="submit" >Login</button>
 </form> 
+
+<form *ngIf="isLoggedIn">
+  <button type="submit" (submit)="logout()">Logout</button>
+</form>
