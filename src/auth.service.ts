@@ -9,7 +9,6 @@ export class AuthService {
   constructor() { }
 
   login() {
-
   }
   logout() {
 
