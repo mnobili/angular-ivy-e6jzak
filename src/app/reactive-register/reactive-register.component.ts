@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../../auth.service';
 
 @Component({
   selector: 'app-reactive-register',
@@ -9,23 +10,23 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class ReactiveRegisterComponent implements OnInit {
   loginForm: FormGroup;
 
-  constructor() {
+  constructor(private _auth: AuthService) {
     this.loginForm = new FormGroup({
-      name: new FormControl(''),
-      email: new FormControl(''),
-      password: new FormControl(''),
-      privacyTerms: new FormControl('', [ Validators.requiredTrue ]),
+      email: new FormControl(),
+    })
+  }
+
+  ngOnInit() {
+    this._auth.isLoggedIn().subscribe((isLoggedIn) => {
+      console.log('user log: ', isLoggedIn);
     });
-    
   }
 
   login() {
-    const email = this.loginForm.value.email
-    const password = this.loginForm.value.password
-    const privacyTerms = this.loginForm.value.privacyTerms
-    alert("User Info: " + `${this.loginForm.value.name} -- ${this.loginForm.value.email} -- ${this.loginForm.value.password}`)
-    }
-  ngOnInit() {
+  }
+  
+  get email(): string {
+    return this.loginForm.value.email as string;
   }
 
 }
