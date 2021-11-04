@@ -13,9 +13,21 @@ import { ReactiveRegisterComponent } from './reactive-register/reactive-register
 import { HttpClientModule } from '@angular/common/http';
 import { PostsListComponent } from './posts-list/posts-list.component';
 import { PostPipe } from './post.pipe';
+import { RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+  {
+    path: 'posts',
+    component: PostsListComponent,
+  },
+  {
+    path: 'login',
+    component: TemplateRegisterComponent,
+  }
+] 
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule ],
+  imports:      [ BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule, RouterModule ],
   declarations: [ AppComponent, HelloComponent, FirstComponent, CeoComponent, DirComponent, TemplateRegisterComponent, ReactiveRegisterComponent, PostsListComponent, PostPipe ],
   bootstrap:    [ AppComponent ]
 })
