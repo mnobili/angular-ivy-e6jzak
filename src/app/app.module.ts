@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PostsListComponent } from './posts-list/posts-list.component';
 import { PostPipe } from './post.pipe';
 import { RouterModule, Routes } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 const routes: Routes = [
   {
@@ -27,7 +28,7 @@ const routes: Routes = [
 ] 
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule, RouterModule.forRoot(routes) ],
+  imports:      [ CommonModule, BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule, RouterModule.forRoot(routes) ],
   declarations: [ AppComponent, HelloComponent, FirstComponent, CeoComponent, DirComponent, TemplateRegisterComponent, ReactiveRegisterComponent, PostsListComponent, PostPipe ],
   bootstrap:    [ AppComponent ]
 })
