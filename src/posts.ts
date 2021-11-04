@@ -1,6 +1,6 @@
 export class Posts {
-  userId: String
-  id: String
-  title: String
-  body: String
+  userId: string
+  id: string
+  title: string
+  body: string
 }
