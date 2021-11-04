@@ -15,7 +15,6 @@ export class PostsListComponent implements OnInit {
     .subscribe(
       posts => {
         this.allPosts = posts;
-        console.log(posts)
     },
     error => {
     }

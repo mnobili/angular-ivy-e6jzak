@@ -7,7 +7,7 @@ import { Posts } from '../posts';
 export class PostPipe implements PipeTransform {
 
   transform(post: Posts, args?: any): any {
-    return Posts;
+    return post.id + '-' + post.title;
   }
 
 }

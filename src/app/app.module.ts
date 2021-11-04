@@ -12,10 +12,11 @@ import { TemplateRegisterComponent } from './template-register/template-register
 import { ReactiveRegisterComponent } from './reactive-register/reactive-register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PostsListComponent } from './posts-list/posts-list.component';
+import { PostPipe } from './post.pipe';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule ],
-  declarations: [ AppComponent, HelloComponent, FirstComponent, CeoComponent, DirComponent, TemplateRegisterComponent, ReactiveRegisterComponent, PostsListComponent ],
+  declarations: [ AppComponent, HelloComponent, FirstComponent, CeoComponent, DirComponent, TemplateRegisterComponent, ReactiveRegisterComponent, PostsListComponent, PostPipe ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
