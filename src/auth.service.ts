@@ -10,7 +10,6 @@ export class AuthService {
 
   login() {
     this.isLoggedIn$.next(true)
-    console.log(this.isLoggedIn$)
   }
   logout() {
     this.isLoggedIn$.next(false)

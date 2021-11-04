@@ -18,6 +18,7 @@ export class ReactiveRegisterComponent implements OnInit {
 
   ngOnInit() {
     this._auth.isLoggedIn().subscribe((isLoggedIn) => {
+      this.isLoggedIn = isLoggedIn
       console.log('user log: ', isLoggedIn);
     });
   }

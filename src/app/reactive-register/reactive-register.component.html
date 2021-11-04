@@ -11,6 +11,6 @@
   <button type="submit" >Login</button>
 </form> 
 
-<form *ngIf="isLoggedIn">
-  <button type="submit" (submit)="logout()">Logout</button>
+<form *ngIf="isLoggedIn" (submit)="logout()">
+  <button type="submit" >Logout</button>
 </form>
