@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../../post.service';
+import { Posts } from '../../posts';
 
 @Component({
   selector: 'app-posts-list',
@@ -7,7 +8,7 @@ import { PostService } from '../../post.service';
   styleUrls: ['./posts-list.component.css']
 })
 export class PostsListComponent implements OnInit {
-  allPosts: any
+  allPosts: Posts[]
   constructor(private _posts: PostService){ }
   ngOnInit() {
     this._posts.fetchAllPosts()
