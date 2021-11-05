@@ -19,12 +19,10 @@ singlePost: any
         this._posts.fetchSinglePost(id).subscribe(
           post => {
             this.singlePost = post;
-            console.log(this.singlePost)
           },
           error => {
           }
           )
-        console.log(id)
       })
     }
 
