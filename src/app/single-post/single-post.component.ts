@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { PostService } from '../../post.service';
+import { Posts } from '../../posts';
 
 @Component({
   selector: 'app-single-post',
@@ -8,15 +10,21 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SinglePostComponent implements OnInit {
 
-constructor(private route: ActivatedRoute) { }
-
+constructor(private route: ActivatedRoute, private _posts: PostService) { }
+singlePost: any
   ngOnInit() {
     this.route.paramMap.subscribe(
       params => {
         const id = params.get('id');
-        const hasName = params.has('name');
-        const userId = params.get('userId')
-        console.log(id, hasName)
+        this._posts.fetchSinglePost(id).subscribe(
+          post => {
+            this.singlePost = post;
+            console.log(this.singlePost)
+          },
+          error => {
+          }
+          )
+        console.log(id)
       })
     }
 

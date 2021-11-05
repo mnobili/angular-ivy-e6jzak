@@ -13,4 +13,10 @@ export class PostService {
     .client
     .get<Posts[]>('https://jsonplaceholder.typicode.com/posts')
   }
+
+  fetchSinglePost(id: string) {
+    return this
+    .client
+    .get<Posts>('https://jsonplaceholder.typicode.com/posts/' + id)
+  }
 }
