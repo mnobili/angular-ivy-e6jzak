@@ -4,9 +4,7 @@
   <div *ngFor="let item of allPosts">
     <ul>
       <li>
-      <strong>userId: </strong> {{ item.userId }}
-      <br>
-      <strong>id: </strong> {{ item | post }}
+      <a [routerLink]="['/posts', item.id]">Post Detail</a>
       <br>
       <strong>title: </strong> {{ item.title | uppercase }}
       <br>

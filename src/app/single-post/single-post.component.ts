@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-single-post',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SinglePostComponent implements OnInit {
 
-  constructor() { }
+constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
-  }
+    this.route.paramMap.subscribe(
+      params => {
+        const id = params.get('id');
+        const hasName = params.has('name');
+        const userId = params.get('userId')
+        console.log(id, hasName)
+      })
+    }
 
 }

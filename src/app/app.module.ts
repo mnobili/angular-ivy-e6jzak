@@ -15,6 +15,7 @@ import { PostsListComponent } from './posts-list/posts-list.component';
 import { PostPipe } from './post.pipe';
 import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { SinglePostComponent } from './single-post/single-post.component';
 
 const routes: Routes = [
   {
@@ -24,7 +25,11 @@ const routes: Routes = [
   {
     path: 'login',
     component: TemplateRegisterComponent,
-  }
+  },
+  {
+    path: 'posts/:id',
+    component: SinglePostComponent
+  },
 ] 
 
 @NgModule({
